@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container {
+        width: 600px;
+        height: 600px;
+        position: relative;
+        background: rgb(0, 255, 221);
+    }
+    
+    #animate {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: rgb(255, 0, 234);
+    }
+</style>
+
+<body>
+
+    <p>
+        <button onclick="myMove()">Нажми</button>
+    </p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 15);
+
+            function frame() {
+                if (pos == 590) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+`
